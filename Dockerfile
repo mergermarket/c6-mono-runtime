@@ -1,7 +1,7 @@
 FROM debian:stable-slim
 
 RUN apt-get update &&\
-    apt-get install -y --no-install-recommends nginx mono-runtime mono-xsp4 mono-fastcgi-server4 supervisor &&\
+    apt-get install -y --no-install-recommends nginx nginx-extras mono-runtime mono-xsp4 mono-fastcgi-server4 supervisor &&\
     apt-get upgrade -y &&\
     apt-get autoremove -y &&\
     apt-get clean &&\
