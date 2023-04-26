@@ -1,7 +1,7 @@
 FROM debian:stable-slim
 
 RUN apt-get update &&\
-    apt-get install -y apt-transport-https dirmngr gnupg ca-certificates &&\
+    apt-get install -y --no-install-recommends apt-transport-https dirmngr gnupg ca-certificates &&\
     gpg --keyserver keyserver.ubuntu.com --receive-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF &&\
     gpg --export > /etc/apt/trusted.gpg.d/mono-official.gpg &&\
     gpg --batch --yes --delete-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF &&\
